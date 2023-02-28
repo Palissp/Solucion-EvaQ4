@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "email": "steve@mail.com",
+      "password": "$2a$10$uXBz4dzDmPqV56pojyGENOgU0g/dJuQybIO/HIErQu1SHKtu71L7S",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "email": "bryan@mail.com",
+      "password": "$2a$10$ri1VYR0jatADz1zrAyrpOe6UPS1ulzMyliagaXHsudbDCwuodgCCa",
+      "role": "visitor",
+      "id": 2
+    },
+    {
+      "email": "bryan2@mail",
+      "password": "$2a$10$N7EA/7eErHJ5A5e7Ug0y6eyXUrMnnKWSk6IYmLytJS4G7/jZe2zsa",
+      "role": "admin",
+      "firstName": "Bryan",
+      "lastName": "Ron",
+      "id": 3
+    },
+    {
+      "email": "bryan2@mail.com",
+      "password": "$2a$10$mFstHdGVFSzTXcPqUfGhNuUYeocRo/bYOfq8g7RS0qcZVqZhiknxu",
+      "role": "admin",
+      "firstName": "Bryan",
+      "lastName": "Ron",
+      "id": 4
+    }
+  ],
+  "pokemons": [
+    {
+      "name": "Pikachu",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/065.png ",
+      "attack": 100,
+      "defense": 100,
+      "hp": 100,
+      "type": "Eléctrico",
+      "id": 1
+    },
+    {
+      "name": "Pikachu",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/065.png ",
+      "attack": 100,
+      "defense": 100,
+      "hp": 100,
+      "type": "Eléctrico",
+      "authorId": 1,
+      "id": 2
+    },
+    {
+      "name": "Pikachu",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/065.png ",
+      "attack": 100,
+      "defense": 100,
+      "hp": 100,
+      "type": "Eléctrico",
+      "authorId": 2,
+      "id": 3
+    }
+  ],
+  "types": [
+    {
+      "name": "Normal",
+      "id": 1
+    },
+    {
+      "name": "Fuego",
+      "id": 2
+    },
+    {
+      "name": "Agua",
+      "id": 3
+    },
+    {
+      "name": "Planta",
+      "id": 4
+    },
+    {
+      "name": "Tierra",
+      "id": 5
+    },
+    {
+      "name": "Veneno",
+      "id": 6
+    }
+  ],
+  "roles": [
+    {
+      "name": "Admin",
+      "id": 1
+    },
+    {
+      "name": "Visitor",
+      "id": 2
+    }
+  ]
+}

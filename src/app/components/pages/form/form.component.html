@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="form">
+        <app-form-title title="Formulario de Registro"></app-form-title>
+        <form class="form__body" [formGroup]="reactiveForm" autocomplete="off" (submit)="sendRegister()">
+            <div class="input-group">
+                <label class="input-group__label">Nombres</label>
+                <input class="input-group__input" type="text" formControlName="name" [class.input-group__input--invalid]="nameValid" >
+                <small class="input-group__input--invalid" *ngIf="nameValid">Este campo es requerido!</small>
+            </div>
+            <div class="input-group">
+                <label class="input-group__label">Apellidos</label>
+                <input class="input-group__input" type="text" formControlName="lastname" [class.input-group__input--invalid]="lastNameValid">
+                <small class="input-group__input--invalid" *ngIf="lastNameValid">Este campo es requerido!</small>
+            </div>
+            <div class="input-group">
+                <label class="input-group__label">Correo Electrónico</label>
+                <input class="input-group__input" type="text" formControlName="email" [class.input-group__input--invalid]="emailValid" >
+                <small class="input-group__input--invalid" *ngIf="emailValid">Este campo es requerido!</small>
+            </div>
+            <div class="input-group">
+                <label class="input-group__label">Número de teléfono</label>
+                <input class="input-group__input" type="text" formControlName="phone" [class.input-group__input--invalid]="phoneValid" >
+                <small class="input-group__input--invalid" *ngIf="phoneValid">Este campo es requerido!</small>
+            </div>
+            <div class="input-group">
+                <label class="input-group__label">Provincia</label>
+                <select formControlName="provincia" class="input-group__input input-group__input-select" (change)="fillCities()" [class.input-group__input--invalid]="provinciaValid" >
+                    <option *ngFor="let province of provinces" [value]="province.code">{{province.name}}</option>
+                </select>
+                <small class="input-group__input--invalid" *ngIf="provinciaValid">Este campo es requerido!</small>
+            </div>
+            <div class="input-group">
+                <label class="input-group__label">Ciudad</label>
+                <select formControlName="ciudad" class="input-group__input input-group__input-select" [class.input-group__input--invalid]="ciudadValid">
+                    <option *ngFor="let city of cities" [value]="city.code">{{city.name}}</option>
+                </select>
+                <small class="input-group__input--invalid" *ngIf="ciudadValid">Este campo es requerido!</small>
+            </div>
+            <div class="input-group__alone">
+                <label class="input-group__label">Seleccione los productos a contratar:</label>
+                <label *ngFor="let product of products"><input type="checkbox" (change)="checkProduct($event)" [value]="product.id" [disabled]="sending"> {{product.name}}</label>
+                <small class="input-group__input--invalid" *ngIf="productosValid">La cantidad de productos debe ser entre 2 y 4!</small>
+            </div>
+            <div class="input-group__info">
+                <label class="input-group__label">¿Desea recibir información adicional al correo electronico?</label>
+                <input type="radio" name="informacion" [value]="false" formControlName="informacion"> No
+                <input type="radio" name="informacion" [value]="true" formControlName="informacion"> Si
+            </div>
+            <div class="input-group__alone">
+                <label class="input-group__label"><input type="checkbox" [disabled]="sending" (change)="changeAcepted($event)"> ¿Aceptas nuestros términos y condiciones?</label>
+            </div>
+            <div class="input-group__buttons">
+                <button class="input-group__button input-group__button--secondary" type="reset" (click)="resetForm()">Reiniciar</button>
+                <button class="input-group__button input-group__button--primary" type="submit" [disabled]="isAcepted">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
